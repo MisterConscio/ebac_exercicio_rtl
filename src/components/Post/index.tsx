@@ -1,4 +1,4 @@
-import styles from './Post.module.css';
+import { PostContainer, PostImg, PostText } from './styles'
 
 import PostComments from '../PostComments';
 import { ReactNode } from 'react';
@@ -9,11 +9,11 @@ type Props = {
 }
 
 const Post = ({ children, imageUrl }: Props) => (
-    <div className={styles.post}>
-        <img className={styles['post-image']} src={imageUrl} />
-        <p className={styles['post-text']}> {children} </p>
+    <PostContainer>
+        <PostImg src={imageUrl} />
+        <PostText> {children} </PostText>
         <PostComments />
-    </div>
+    </PostContainer>
 );
 
 export default Post;

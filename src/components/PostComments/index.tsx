@@ -18,7 +18,7 @@ const Post = () => {
         <>
             <ul>
                 {comments.map(({ comment, id }) => (
-                    <PostComment key={id}>
+                    <PostComment data-testid="comentario-content" key={id}>
                         <PostCommentContent>
                             {comment}
                         </PostCommentContent>
@@ -27,7 +27,7 @@ const Post = () => {
             </ul>
             <PostForm onSubmit={handleAddComment}>
                 <PostTextarea value={tempComment} onChange={e => setTempComment(e.target.value)} required />
-                <PostBtn type="submit">
+                <PostBtn data-testid="btn-add-comentario" type="submit">
                     Comentar
                 </PostBtn>
             </PostForm>

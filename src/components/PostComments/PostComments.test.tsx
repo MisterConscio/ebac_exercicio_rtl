@@ -7,4 +7,14 @@ describe('Teste para o componente PostComment', () => {
         render(<PostComment/>);
         expect(screen.getByText('Comentar')).toBeInTheDocument();
     });
+    test('Deve adicionar dois comentários', () => {
+        render(<PostComment/>);
+
+        fireEvent.click(screen.getByTestId('btn-add-comentario'))
+        fireEvent.click(screen.getByTestId('btn-add-comentario'))
+
+        const comments = screen.getAllByTestId('comentario-content')
+
+        expect(comments.length).toEqual(2);
+    })
 });
